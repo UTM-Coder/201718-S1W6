@@ -38,6 +38,14 @@ class Car {
     this.model = model;
     this.country = country;
   }
+
+  	static serviceCar(Car) {
+  		console.log('Your ' + Car.model + ' is serviced.');
+  	}
+
+  	drive() {
+  		console.log('Driving.');
+  	}
 }
 
 var J130 = new Car('red', 'Toyota', 'Japan');
@@ -46,6 +54,14 @@ console.log(J130);
 class Toyota extends Car {
 	constructor (color) {
 		super(color, 'Toyota', 'Japan');
+	}
+
+	static serviceCar(Car) {
+		if (Car.model == 'Toyota') {
+	  		console.log('Your Toyota is serviced.');
+		} else {
+			console.log('We cannot service a ' + Car.model + ' car.');
+		}
 	}
 }
 
